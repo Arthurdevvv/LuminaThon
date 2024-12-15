@@ -1,0 +1,17 @@
+{
+    "psiquiatras": [
+      {
+        "id": 1,
+        "nome": "Ana Mária",
+        "avaliacao": 3,
+        "experiencia": 6
+      },
+      {
+        "id": 2,
+        "nome": "João Paulo",
+        "avaliacao": 4,
+        "experiencia": 2
+      }
+    ]
+  }
+  
