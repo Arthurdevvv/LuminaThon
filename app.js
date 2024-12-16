@@ -26,7 +26,7 @@ app.post('/profissionais', async (req, res) => {
 
     try {
         // Carrega o JSON dos profissionais
-        const data = await fs.readFile('src/database/profissionais.json', 'utf-8');
+        const data = await fs.readFile('profissionais.json', 'utf-8');
         const profissionaisData = JSON.parse(data);
 
         const profissionais = profissionaisData.profissionais[categoria];
