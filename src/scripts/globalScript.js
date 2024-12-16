@@ -1,33 +1,47 @@
-async function getJson() {
+async function getJson(event) {
+    event.preventDefault(); 
+
+    const select = document.getElementById("categoria");
+    const escolha = select.value;
+    const ordenacao = document.getElementById("ordenacao").value;
+
     try {
         const response = await fetch('src/database/profissionais.json');
         if (!response.ok) {
             throw new Error(`Status: ${response.status}`);
         }
         const data = await response.json();
-        console.log("Dados carregados:", data);
+        const profissionais = data.profissionais[escolha];
 
-        const psiquiatrasOrdenados = ordenarPsiquiatras(data.psiquiatras);
-        exibirRanking(psiquiatrasOrdenados);
+        const profissionaisOrdenados = ordenarProfissionais(profissionais, ordenacao);
+        exibirRanking(profissionaisOrdenados);
     } catch (error) {
         console.error('Erro ao buscar o JSON:', error);
     }
 }
 
-function ordenarPsiquiatras(psiquiatras) {
-    return psiquiatras.sort((a, b) => {
-        if (b.experiencia !== a.experiencia) {
-            return b.experiencia - a.experiencia;
+function ordenarProfissionais(profissionais, ordenacao) {
+    return profissionais.sort((a, b) => {
+        if (ordenacao === "avaliacao") {
+            return b.avaliacao - a.avaliacao;
+        } else if (ordenacao === "preco") {
+            return a.valor_por_consulta - b.valor_por_consulta;
         }
-        return b.avaliacao - a.avaliacao;
+        return 0;
     });
 }
 
-function exibirRanking(psiquiatras) {
-    console.log("Ranking dos Psiquiatras:");
-    psiquiatras.forEach((psiquiatra, index) => {
-        console.log(
-            `#${index + 1} - ${psiquiatra.nome} | Experiência: ${psiquiatra.experiencia} anos | Avaliação: ${psiquiatra.avaliacao}`
-        );
+function exibirRanking(profissionais) {
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = "";
+
+    profissionais.forEach((profissional, index) => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+            <strong>#${index + 1} - ${profissional.nome}</strong><br>
+            Avaliação: ${profissional.avaliacao} ⭐<br>
+            Valor por consulta: R$ ${profissional.valor_por_consulta.toFixed(2)}
+        `;
+        resultado.appendChild(div);
     });
 }

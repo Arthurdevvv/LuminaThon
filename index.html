@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ranking dos Psiquiatras</title>
+  <title>Ranking dos Profissionais</title>
 </head>
 <body>
-  <button onclick="getJson()">Buscar</button>
+
+  <form id="form" onsubmit="getJson(event)">
+    <label for="ordenacao">Ordenar por:</label>
+    <select id="ordenacao">
+      <option value="avaliacao">Avaliação (Maior para Menor)</option>
+      <option value="preco">Preço (Menor para Maior)</option>
+    </select>
+    <br><br>
+    <div>
+      <label for="categoria">Selecione uma categoria:</label>
+      <select id="categoria">
+        <option value="Fisioterapeutas">Fisioterapeutas</option>
+        <option value="Psicologos">Psicólogos</option>
+        <option value="Nutricionistas">Nutricionistas</option>
+      </select>
+    </div>
+
+    <button type="submit">Buscar</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <div id="loading" class="loading" style="display:none;">Carregando resultados...</div>
 
   <script src="./src/scripts/globalScript.js"></script>
 </body>

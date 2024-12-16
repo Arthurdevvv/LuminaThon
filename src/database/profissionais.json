@@ -1,17 +1,100 @@
 {
-    "psiquiatras": [
+  "profissionais": {
+    "Fisioterapeutas": [
       {
         "id": 1,
-        "nome": "Ana Mária",
-        "avaliacao": 3,
-        "experiencia": 6
+        "nome": "Dra. Thiago Mendes",
+        "avaliacao": 4.9,
+        "valor_por_consulta": 250.00
       },
       {
         "id": 2,
-        "nome": "João Paulo",
-        "avaliacao": 4,
-        "experiencia": 2
+        "nome": "Dr. Juliana Pereira",
+        "avaliacao": 4.5,
+        "valor_por_consulta": 300.00
+      },
+      {
+        "id": 3,
+        "nome": "Dr. Ana Santos",
+        "avaliacao": 4.7,
+        "valor_por_consulta": 180.00
+      },
+      {
+        "id": 4,
+        "nome": "Dr. Maria Oliveira",
+        "avaliacao": 4.6,
+        "valor_por_consulta": 250.00
+      },
+      {
+        "id": 5,
+        "nome": "Dr. Larissa Gomes",
+        "avaliacao": 4.8,
+        "valor_por_consulta": 220.00
+      }
+    ],
+    "Psicologos": [
+      {
+        "id": 1,
+        "nome": "Dr. Luana Costa",
+        "avaliacao": 4.4,
+        "valor_por_consulta": 120.00
+      },
+      {
+        "id": 2,
+        "nome": "Dra. Ana Santos",
+        "avaliacao": 4.8,
+        "valor_por_consulta": 280.00
+      },
+      {
+        "id": 3,
+        "nome": "Dr. Maria Oliveira",
+        "avaliacao": 4.9,
+        "valor_por_consulta": 130.00
+      },
+      {
+        "id": 4,
+        "nome": "Dra. Carlos Almeida",
+        "avaliacao": 4.0,
+        "valor_por_consulta": 150.00
+      },
+      {
+        "id": 5,
+        "nome": "Dra. João Silva",
+        "avaliacao": 4.5,
+        "valor_por_consulta": 250.00
+      }
+    ],
+    "Nutricionistas": [
+      {
+        "id": 1,
+        "nome": "Dra. Maria Oliveira",
+        "avaliacao": 4.7,
+        "valor_por_consulta": 140.00
+      },
+      {
+        "id": 2,
+        "nome": "Dra. Fernanda Rocha",
+        "avaliacao": 4.4,
+        "valor_por_consulta": 290.00
+      },
+      {
+        "id": 3,
+        "nome": "Dr. João Silva",
+        "avaliacao": 4.4,
+        "valor_por_consulta": 260.00
+      },
+      {
+        "id": 4,
+        "nome": "Dra. Carlos Almeida",
+        "avaliacao": 4.2,
+        "valor_por_consulta": 270.00
+      },
+      {
+        "id": 5,
+        "nome": "Dr. Thiago Mendes",
+        "avaliacao": 4.2,
+        "valor_por_consulta": 300.00
       }
     ]
   }
-  
+}
